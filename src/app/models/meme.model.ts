@@ -13,3 +13,8 @@ export class Meme {
   shortUrl: string | undefined;
   accessCount: number | undefined;
 }
+
+export class MemeSearch {
+  name: string | undefined;
+  description: string | undefined;
+}

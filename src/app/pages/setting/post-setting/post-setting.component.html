@@ -1,0 +1,32 @@
+
+ <div>
+  <h1>Post Setting</h1>
+  <a href="/">Go to Home Page</a><br/>
+  <a href="/settings">Go to Settings Page</a>
+    <div>
+      <label>Setting ID: </label>
+      <input type="text" placeholder="Insert Setting ID" [(ngModel)]="settingId" />
+    </div>
+    <button (click)="getSetting()">
+    Get Setting
+    </button>
+    <button (click)="deleteSetting()">
+    Delete Setting
+    </button>
+    <button (click)="addSetting()">
+    Add Setting
+    </button>
+    <button (click)="editSetting()">
+    Edit Setting
+    </button>
+    <label *ngIf="idMessage !== undefined">{{idMessage}}</label>
+    <label *ngIf="postMessage !== undefined">{{postMessage}}</label>
+    <div>
+      <label>Name: </label>
+      <input type="text" placeholder="Insert setting Name" [(ngModel)]="setting.name" />
+    </div>
+    <div>
+      <label>Value: </label>
+      <input type="text" placeholder="Insert setting Value" [(ngModel)]="setting.value" />
+    </div>
+</div>

@@ -1,0 +1,47 @@
+
+ <div>
+  <h1>Post Meme</h1>
+  <a href="/">Go to Home Page</a>
+    <div>
+      <label>Meme ID: </label>
+      <input type="text" placeholder="Insert Meme ID" [(ngModel)]="memeId" />
+    </div>
+    <button (click)="getMeme()">
+    Get Meme
+    </button>
+    <button (click)="deleteMeme()">
+    Delete Meme
+    </button>
+    <button (click)="addMeme()">
+    Add Meme
+    </button>
+    <button (click)="editMeme()">
+    Edit Meme
+    </button>
+    <label *ngIf="idMessage !== undefined">{{idMessage}}</label>
+    <label *ngIf="postMessage !== undefined">{{postMessage}}</label>
+    <div>
+      <label>Name: </label>
+      <input type="text" placeholder="Insert Meme Name" [(ngModel)]="meme.name" />
+    </div>
+    <div>
+      <label>Description: </label>
+      <input type="text" placeholder="Insert Meme Description" [(ngModel)]="meme.description" />
+    </div>
+    <div>
+      <label>Width: </label>
+      <input type="number" placeholder="Insert Meme Width" [(ngModel)]="meme.width" />
+    </div>
+    <div>
+      <label>Height: </label>
+      <input type="number" placeholder="Insert Meme Height" [(ngModel)]="meme.height" />
+    </div>
+    <div>
+      <label>Original: </label>
+      <input type="text" placeholder="Insert Meme Original" [(ngModel)]="meme.original" />
+    </div>
+    <div>
+      <label>Thumbnail: </label>
+      <input type="text" placeholder="Insert Meme Thumbnail" [(ngModel)]="meme.thumbnail" />
+    </div>
+</div>

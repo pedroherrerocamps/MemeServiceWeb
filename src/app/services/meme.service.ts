@@ -1,4 +1,4 @@
-import { Meme } from './../models/meme.model';
+import { Meme, MemeSearch } from './../models/meme.model';
 import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
@@ -21,6 +21,10 @@ export class MemeService {
 
   getMemes(): Observable<Meme[]> {
     return this.http.get<Meme[]>(`${this.apiUrl}`);
+  }
+
+  searchMemes(memeSearch: MemeSearch): Observable<Meme[]> {
+    return this.http.post<Meme[]>(`${this.apiUrl}/byCondition`,JSON.stringify(memeSearch), this.httpOptions);
   }
 
   getById(id: string): Observable<Meme> {

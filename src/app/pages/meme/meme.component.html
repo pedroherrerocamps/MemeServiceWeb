@@ -1,1 +1,27 @@
-<p>meme works!</p>
+<div>
+  <h1>Meme Service</h1>
+  <a href="/postMeme">Go to Post Page</a><br/>
+  <a href="/settings">Go to Settings Page</a>
+  <button (click)="getMemes()">
+    Get Memes
+  </button>
+  <div>
+    <label>Name: </label>
+    <input type="text" placeholder="Insert Meme Name" [(ngModel)]="memeName" />
+  </div>
+  <div>
+    <label>Description: </label>
+    <input type="text" placeholder="Insert Meme Description" [(ngModel)]="memeDescription" />
+  </div>
+  <button (click)="searchMemes()">
+  Search Memes
+  </button>
+    <label *ngIf="searchMessage !== undefined">{{searchMessage}}</label>
+
+  <label>Here'd be the Search List, for thy who seek Memes!</label>
+  <ul *ngIf="memeList !== undefined">
+    <li *ngFor="let meme of memeList" >
+      <p>Name: {{meme.name}} <br/> Id: {{meme.id}} <br/> Short Url: {{meme.shortUrl}}</p>
+    </li>
+  </ul>
+</div>

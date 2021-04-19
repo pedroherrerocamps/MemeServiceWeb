@@ -1,0 +1,22 @@
+<div>
+  <h1>Setting Page</h1>
+  <a href="/">Go to Home Page</a><br/>
+  <a href="/settingsPost">Go to Setting Post Page</a>
+  <button (click)="getSettings()">
+    Get Settings
+  </button>
+  <div>
+    <label>Name: </label>
+    <input type="text" placeholder="Insert Setting Name" [(ngModel)]="settingName" />
+  </div>
+  <div>
+    <label>Value: </label>
+    <input type="text" placeholder="Insert Setting Value" [(ngModel)]="settingValue" />
+  </div>
+  <label>Here'd be the Search List, for thy who seek Settings!</label>
+  <ul *ngIf="settingList !== undefined">
+    <li *ngFor="let setting of settingList" >
+      <p>Name: {{setting.name}} <br/> Id: {{setting.id}} <br/> Valu: {{setting.value}}</p>
+    </li>
+  </ul>
+</div>
