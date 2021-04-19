@@ -10,7 +10,7 @@ const routes: Routes = [{
   component: MemeComponent
 },
 {
-  path: 'postMeme',
+  path: 'memePost',
   component: PostMemeComponent
 },
 {
